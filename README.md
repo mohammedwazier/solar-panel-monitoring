@@ -11,3 +11,9 @@
     3. run ./dev.sh
     4. open http://localhost:8000 on your browser
 ```
+
+```
+    Conf the database
+    Execute the SQL data
+    solar_panel.sql
+```
