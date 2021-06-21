@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="./assets/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <script>
+        var BC = new BroadcastChannel('monitorChannel');
+        BC.onmessage = function({data}){
+            if(data === 'reload'){
+                window.location.reload();
+            }
+        }
+  </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -251,7 +259,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="#">Abdul Aziz 6702160097</a>.</strong>
+    <strong>Copyright &copy; 2021 <a href="#">Abdul Aziz 6702160097</a>.</strong>
     All rights reserved.
   </footer>
 </div>

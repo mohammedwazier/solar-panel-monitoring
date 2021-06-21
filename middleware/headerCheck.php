@@ -11,23 +11,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 function validateParams($data, $paramsList){
     if(count($data) !== count($paramsList)){
-        responseParams($paramsList, 101);
+        responseFailed($paramsList, 101);
     }
 
     $result = array_diff($data, $paramsList);
     if(count($result) > 0){
-        responseParams($paramsList, 102);
+        responseFailed($paramsList, 102);
     }
     return true;
 }
 
-function responseParams($params, $code = 100){
+function responseFailed($params = [], $code = 100, $err = '', $message = 'Wrong parameter'){
     header('Content-Type: application/json');
     die(json_encode([
-        'message' => 'Wrong parameter',
+        'message' => $message,
         'state' => false,
         'data_params' => $params,
-        'code' => $code
+        'code' => $code,
+        'err' => $err
     ]));
 }
 

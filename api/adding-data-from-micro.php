@@ -20,4 +20,11 @@ $Query = "INSERT INTO
 VALUES
 ('{$Date}', '{$ARR_DATA['latitude']}', '{$ARR_DATA['longitude']}', '{$ARR_DATA['light_intensity']}', '{$ARR_DATA['voltage']}', '{$ARR_DATA['machine_id']}', '{$ARR_DATA['status']}')
 ";
-// return print_r($Query);
+
+try {
+    if ($CONN->query($Query) === TRUE) {
+        responseSuccess('Success insert data to Log Data', $ARR_DATA);
+    }
+} catch (Exception $th) {
+    responseFailed(null, $th->getCode(), $th->getMessage(), 'Catch an Error', $th);
+}
