@@ -1,8 +1,8 @@
 <?php
 
-$SERVER = '127.0.0.1';
-$USER = 'root';
-$PASS = '085283480788';
+$SERVER     = '127.0.0.1';
+$USER       = 'root';
+$PASS       = '085283480788';
 
 $DATABASE = 'solar_panel';
 

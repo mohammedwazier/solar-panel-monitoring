@@ -4,15 +4,15 @@ require_once('../config/Connection.php');
 require_once('../middleware/headerCheck.php');
 
 // POST BODY JSON DATA
-$RAW_DATA = file_get_contents("php://input");
-$ARR_DATA = json_decode($RAW_DATA, true);
-$ARR_KEY = array_keys($ARR_DATA);
+$RAW_DATA   = file_get_contents("php://input");
+$ARR_DATA   = json_decode($RAW_DATA, true);
+$ARR_KEY    = array_keys($ARR_DATA);
 
-$parameter = ['latitude', 'longitude', 'light_intensity', 'voltage', 'status', 'machine_id'];
+$parameter  = ['latitude', 'longitude', 'light_intensity', 'voltage', 'status', 'machine_id'];
 
-$data = validateParams($ARR_KEY, $parameter);
+$data       = validateParams($ARR_KEY, $parameter);
 
-$Date = date("Y-m-d H:i:s");
+$Date       = date("Y-m-d H:i:s");
 // Query
 $Query = "INSERT INTO
 `solar_panel`.`log_monitor`

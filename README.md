@@ -4,9 +4,9 @@
     1. Clone this Repo
     2. Change database Configuration on /config/Connection.php
     --------------------------------
-        $SERVER = '127.0.0.1';
-        $USER = 'root';
-        $PASS = '085283480788';
+        $SERVER     = '127.0.0.1';
+        $USER       = 'root';
+        $PASS       = '085283480788';
     --------------------------------
     3. run ./dev.sh
     4. open http://localhost:8000 on your browser
